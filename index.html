@@ -1,1 +1,276 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101323">
+<meta name="description" content="ساخت اپلیکیشن اختصاصی اندروید برای کسب‌وکار شما با نام، لوگو و امکانات متناسب با نیازتان.">
+<title>موبی‌گراف | اپلیکیشن اختصاصی کسب‌وکار شما</title>
+<style>
+:root{--bg:#101323;--panel:#191e32;--gold:#e9c77b;--text:#f6f5f1;--muted:#b4b8ca;--line:#30364d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.9}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,92%);margin:auto}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:#101323f2;backdrop-filter:blur(12px);z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0}
+.logo{font-size:22px;font-weight:bold;color:var(--gold);letter-spacing:-1px}
+nav{display:flex;gap:18px;font-size:13px;color:var(--muted)}
+nav a:hover{color:var(--gold)}
+.hero{padding:76px 0 58px;background:radial-gradient(ellipse at 80% 10%,#34304b 0,transparent 48%)}
+.tag{display:inline-block;border:1px solid #756644;color:var(--gold);border-radius:50px;padding:4px 13px;font-size:12px}
+h1{font-size:clamp(30px,5vw,49px);line-height:1.55;margin:18px 0}
+h1 span{color:var(--gold)}
+.lead{color:var(--muted);max-width:650px;font-size:16px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 19px;border-radius:11px;font-weight:bold;font-size:14px;border:1px solid var(--line);cursor:pointer;font-family:inherit}
+.primary{background:var(--gold);color:#191827;border-color:var(--gold)}
+.secondary{background:transparent;color:var(--text)}
+section{padding:55px 0}
+.section-title{text-align:center;font-size:27px;margin:0 0 8px}
+.section-desc{text-align:center;color:var(--muted);font-size:14px;margin:0 auto 28px;max-width:650px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:22px}
+.symbol{font-size:27px}
+.card h3{margin:6px 0;font-size:18px}
+.card p{font-size:13px;color:var(--muted);margin:6px 0}
+.feature-list{padding:0;list-style:none;font-size:13px;color:var(--muted)}
+.feature-list li{margin:6px 0}
+.feature-list li:before{content:"✓";color:var(--gold);margin-left:8px;font-weight:bold}
+.highlight{background:linear-gradient(135deg,#24253a,#171c30);border:1px solid #66583c;border-radius:22px;padding:30px}
+.highlight h3{font-size:24px;margin:8px 0}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}
+.pill{border:1px solid var(--line);padding:5px 11px;border-radius:30px;font-size:12px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.step{border-right:2px solid var(--gold);padding:4px 15px}
+.step b{display:block;margin-bottom:5px}
+.step p{font-size:13px;color:var(--muted);margin:0}
+form{max-width:680px;margin:auto;background:var(--panel);border:1px solid var(--line);padding:23px;border-radius:18px}
+label{display:block;font-size:13px;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:12px;background:#101526;border:1px solid #3a4058;border-radius:9px;color:var(--text);font:inherit;font-size:14px}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--gold)}
+textarea{min-height:100px;resize:vertical}
+form .btn{width:100%;margin-top:15px}
+#result{display:none;margin-top:18px;padding:15px;border:1px solid #5c654c;border-radius:12px;background:#202b2b}
+#orderText{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;color:var(--muted)}
+.contact{text-align:center;background:#191e32;border-top:1px solid var(--line)}
+.contact p{color:var(--muted);font-size:14px}
+footer{text-align:center;padding:22px 0;color:var(--muted);font-size:12px}
+footer span{color:var(--gold)}
+.small{font-size:12px;color:var(--muted)}
+@media(max-width:700px){
+ nav{gap:10px;font-size:11px}
+ .nav{flex-wrap:wrap}
+ .hero{padding:48px 0 38px}
+ .grid{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr;gap:20px}
+ section{padding:40px 0}
+ .card{padding:18px}
+ .highlight{padding:22px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a class="logo" href="#home">MOBIGRAPH</a>
+<nav>
+<a href="#services">خدمات</a>
+<a href="#salonyar">سالن‌یار</a>
+<a href="#order">ثبت سفارش</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap">
+<span class="tag">طراحی اختصاصی برای کسب‌وکار شما</span>
+<h1>کسب‌وکارت را<br><span>اپلیکیشن اختصاصی</span> کن</h1>
+<p class="lead">اپلیکیشنی با نام، لوگو، رنگ‌بندی و امکانات متناسب با کسب‌وکار خودت داشته باش. راهکاری کاربردی برای ارتباط بهتر با مشتریان و مدیریت سفارش‌ها.</p>
+<div class="actions">
+<a class="btn primary" href="#order">درخواست ساخت اپلیکیشن ←</a>
+<a class="btn secondary" href="#services">مشاهده خدمات</a>
+</div>
+<p class="small">امکان ساخت نسخه اندروید متناسب با نیاز هر کسب‌وکار</p>
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+<h2 class="section-title">چه اپلیکیشنی نیاز داری؟</h2>
+<p class="section-desc">به‌جای یک برنامه عمومی، راهکاری متناسب با کار خودت سفارش بده.</p>
+<div class="grid">
+<article class="card">
+<div class="symbol">💇🏻</div>
+<h3>اپلیکیشن سالن زیبایی</h3>
+<p>برای ثبت نوبت‌ها، اطلاعات مشتریان و نظم بیشتر در کارهای روزانه سالن.</p>
+<ul class="feature-list">
+<li>ثبت مشتری و نوبت</li>
+<li>یادآوری پیامکی نوبت‌ها</li>
+<li>رسید و حسابداری ساده</li>
+</ul>
+</article>
+<article class="card">
+<div class="symbol">🧁</div>
+<h3>اپ سفارش‌گیری</h3>
+<p>مناسب مشاغلی که سفارش مشتری را دریافت و پیگیری می‌کنند.</p>
+<ul class="feature-list">
+<li>ثبت اطلاعات سفارش</li>
+<li>پیگیری وضعیت سفارش‌ها</li>
+<li>طراحی متناسب با نوع فعالیت</li>
+</ul>
+</article>
+<article class="card">
+<div class="symbol">📅</div>
+<h3>تقویم اختصاصی</h3>
+<p>تقویمی با هویت بصری برند، نام کسب‌وکار و امکانات متناسب با نیاز شما.</p>
+<ul class="feature-list">
+<li>نام و لوگوی اختصاصی</li>
+<li>رنگ‌بندی و بنر سفارشی</li>
+<li>امکان بررسی قابلیت‌های درخواستی</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+
+<section id="salonyar">
+<div class="wrap">
+<div class="highlight">
+<span class="tag">محصول نمونه</span>
+<h3>سالن‌یار؛ مدیریت ساده‌تر سالن زیبایی</h3>
+<p class="lead">یک اپلیکیشن اندرویدی قابل سفارشی‌سازی برای سالن‌هایی که می‌خواهند نوبت‌ها و اطلاعات مشتریانشان را مرتب‌تر مدیریت کنند.</p>
+<div class="pills">
+<span class="pill">ثبت نوبت مشتریان</span>
+<span class="pill">یادآوری پیامکی</span>
+<span class="pill">ثبت رسید</span>
+<span class="pill">حسابداری ساده</span>
+<span class="pill">کارکرد آفلاین</span>
+</div>
+<ul class="feature-list">
+<li>قابلیت سفارشی‌سازی نام، لوگو و مشخصات سالن</li>
+<li>استفاده آفلاین از اطلاعات ثبت‌شده روی دستگاه</li>
+<li>خرید یک‌باره بدون اشتراک ماهانه برای نسخه توافق‌شده</li>
+</ul>
+<p class="small">هزینه پیامک، شرایط ارسال و جزئیات امکانات سفارشی پیش از سفارش مشخص می‌شود.</p>
+<a class="btn primary" href="#order">سفارش اپلیکیشن سالن من</a>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2 class="section-title">سفارش چطور انجام می‌شود؟</h2>
+<p class="section-desc">از شناخت نیاز تا تحویل نسخه اختصاصی.</p>
+<div class="steps">
+<div class="step"><b>۱. توضیح نیازها</b><p>نوع کسب‌وکار و امکانات موردنیازت را اعلام می‌کنی.</p></div>
+<div class="step"><b>۲. توافق بر امکانات و قیمت</b><p>جزئیات، زمان تحویل و هزینه قبل از شروع مشخص می‌شود.</p></div>
+<div class="step"><b>۳. ساخت و تحویل</b><p>نسخه سفارشی پس از توافق و بررسی آماده تحویل می‌شود.</p></div>
+</div>
+</div>
+</section>
+
+<section id="order">
+<div class="wrap">
+<h2 class="section-title">درخواست ساخت اپلیکیشن</h2>
+<p class="section-desc">فرم را پر کن تا متن درخواستت آماده شود و بتوانی آن را برای ما بفرستی.</p>
+<form id="orderForm">
+<label for="name">نام شما یا نام کسب‌وکار *</label>
+<input id="name" name="name" required maxlength="100" placeholder="مثلاً سالن زیبایی تارا">
+
+<label for="type">نوع کسب‌وکار *</label>
+<select id="type" name="type" required>
+<option value="">انتخاب کنید</option>
+<option>سالن زیبایی</option>
+<option>کیک و شیرینی خانگی</option>
+<option>غذا و سفارش خانگی</option>
+<option>خیاطی و پوشاک</option>
+<option>تقویم اختصاصی</option>
+<option>سایر مشاغل</option>
+</select>
+
+<label for="contact">راه ارتباطی شما *</label>
+<input id="contact" name="contact" required maxlength="100" placeholder="شماره تماس یا شناسه تلگرام">
+
+<label for="details">امکانات موردنیاز</label>
+<textarea id="details" name="details" maxlength="1500" placeholder="چه امکاناتی می‌خواهید؟ آیا لوگو دارید؟"></textarea>
+
+<button class="btn primary" type="submit">آماده‌سازی متن سفارش</button>
+
+<div id="result" aria-live="polite">
+<strong>متن درخواست آماده شد</strong>
+<p class="small">متن را کپی کن و در گفت‌وگوی تلگرام برای ما بفرست.</p>
+<div id="orderText"></div>
+<button class="btn secondary" type="button" id="copyBtn">کپی متن سفارش</button>
+<a class="btn primary" style="width:100%;margin-top:10px" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener">رفتن به تلگرام Mobigraph</a>
+</div>
+<p class="small">این فرم اطلاعات را در سایت ذخیره یا خودکار ارسال نمی‌کند.</p>
+</form>
+</div>
+</section>
+
+<section class="contact">
+<div class="wrap">
+<h2 class="section-title">برای شروع آماده‌ای؟</h2>
+<p>برای مشاوره و بررسی سفارش، از راه‌های زیر پیام بده.</p>
+<div class="actions" style="justify-content:center">
+<a class="btn primary" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener">✈ تلگرام: mobigraph_ir</a>
+<a class="btn secondary" href="https://instagram.com/m.mobilgraph" target="_blank" rel="noopener">◎ اینستاگرام: m.mobilgraph</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">© <span>Mobigraph</span> — طراحی اپلیکیشن اختصاصی کسب‌وکارها</div>
+</footer>
+
+<script>
+const form = document.getElementById('orderForm');
+const result = document.getElementById('result');
+const orderText = document.getElementById('orderText');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const type = document.getElementById('type').value;
+  const contact = document.getElementById('contact').value.trim();
+  const details = document.getElementById('details').value.trim();
+
+  const message =
+`سلام موبی‌گراف، برای ساخت اپلیکیشن اختصاصی درخواست دارم.
+
+نام کسب‌وکار: ${name}
+نوع فعالیت: ${type}
+راه ارتباطی: ${contact}
+امکانات موردنیاز: ${details || 'نیاز به مشاوره دارم'}
+
+لطفاً برای بررسی امکانات و هزینه راهنمایی کنید.`;
+
+  orderText.textContent = message;
+  result.style.display = 'block';
+  document.getElementById('copyBtn').textContent = 'کپی متن سفارش';
+  result.scrollIntoView({behavior:'smooth', block:'center'});
+});
+
+document.getElementById('copyBtn').addEventListener('click', async function() {
+  const text = orderText.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    this.textContent = 'متن کپی شد ✓';
+  } catch (error) {
+    const range = document.createRange();
+    range.selectNodeContents(orderText);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    this.textContent = 'متن را انتخاب کن و کپی بزن';
+  }
+});
+</script>
+</body>
+</html>
+
