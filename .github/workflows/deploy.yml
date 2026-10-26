@@ -1,0 +1,80 @@
+
+name: Extract ZIP and Deploy Mobigraph
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "mobigraph-portfolio-github-pages.zip"
+      - ".github/workflows/deploy.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: mobigraph-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract website ZIP
+        run: |
+          set -e
+          ZIP="mobigraph-portfolio-github-pages.zip"
+          test -f "$ZIP"
+          mkdir -p /tmp/mobigraph-site
+          unzip -o "$ZIP" -d /tmp/mobigraph-site
+
+          ROOT="/tmp/mobigraph-site"
+          if [ ! -f "$ROOT/index.html" ]; then
+            FOUND=$(find "$ROOT" -mindepth 2 -maxdepth 3 -name index.html -print -quit)
+            if [ -z "$FOUND" ]; then
+              echo "ERROR: index.html not found in ZIP"
+              exit 1
+            fi
+            ROOT="$(dirname "$FOUND")"
+          fi
+
+          find "$ROOT" -maxdepth 1 -type f ! -name index.html -print
+
+          # Copy website files to repository root.
+          rsync -av --exclude='.git' "$ROOT"/ ./
+
+          # Keep the uploaded ZIP as the source archive.
+          touch .nojekyll
+
+      - name: Commit extracted website
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Deploy updated Mobigraph website"
+            git push
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
