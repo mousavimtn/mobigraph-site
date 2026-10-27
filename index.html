@@ -88,7 +88,11 @@ section{padding:76px 0}
 .contact-btn{min-width:150px}
 .contact-btn.telegram{border-color:#2a91d2}
 .contact-btn.whatsapp{border-color:#248f4b}
-.contact-btn.eitaa{border-color:#756644}
+ .contact-btn.eitaa{border-color:#e37600}.contact-btn.eitaa .social-icon{color:#e37600}
+    .social-icon{width:22px;height:22px;flex:0 0 22px;display:inline-block;vertical-align:middle}
+    .contact-btn,.mobile-contact a{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+    .mobile-contact .social-icon{width:20px;height:20px;flex-basis:20px}
+    .social-label{display:inline-flex;align-items:center;gap:6px}
 .contact-handle{font-size:12px;color:var(--muted);margin-top:17px}
 footer{padding:25px 0;color:var(--muted);font-size:12px}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px}
@@ -105,9 +109,35 @@ footer strong{color:var(--gold)}
  .hero{padding:42px 0 48px}h1{font-size:34px}.lead{font-size:14px}.hero-art{max-width:320px}.float-chip{font-size:11px;padding:9px 11px}
  .projects,.services-grid{grid-template-columns:1fr}.project-media{aspect-ratio:4/3}.project-media.poster{aspect-ratio:4/4.2}.project-media.video{aspect-ratio:9/12}
  .feature-panel{padding:20px}.contact-links{display:grid;grid-template-columns:1fr}.contact-btn{width:100%}
- .footer-row{flex-direction:column;text-align:center}.mobile-contact{display:flex;position:fixed;z-index:30;bottom:10px;left:12px;right:12px;gap:8px;padding:8px;background:rgba(16,19,35,.94);border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(12px);box-shadow:0 10px 30px #050711}.mobile-contact a{flex:1;padding:9px 4px;font-size:11px;border-radius:9px;text-align:center}.mobile-contact .wa{background:#1b7540}.mobile-contact .tg{background:#185b83}.mobile-contact .ei{background:#292f49}
+ .footer-row{flex-direction:column;text-align:center}.mobile-contact{display:flex;position:fixed;z-index:30;bottom:10px;left:12px;right:12px;gap:8px;padding:8px;background:rgba(16,19,35,.94);border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(12px);box-shadow:0 10px 30px #050711}.mobile-contact a{flex:1;padding:9px 4px;font-size:11px;border-radius:9px;text-align:center}.mobile-contact .wa{background:#1b7540}.mobile-contact .tg{background:#185b83}.mobile-contact .ei{background:#292f49}.mobile-contact .ei .social-icon{color:#e37600}
  body{padding-bottom:74px}
 }
+
+/* تعرفه‌ها */
+.pricing-section{background:linear-gradient(180deg,rgba(255,255,255,.015),transparent 70%)}
+.pricing-card{position:relative;max-width:570px;margin:0 auto;padding:clamp(22px,5vw,36px);border:1px solid rgba(233,199,123,.38);border-radius:24px;background:linear-gradient(145deg,#202640,#151a2d);box-shadow:0 24px 70px rgba(0,0,0,.22);overflow:hidden}
+.pricing-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#c72b3b,#f06a72,#e9c77b)}
+.pricing-topline{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pricing-badge,.pricing-limit{font-size:11px;border-radius:30px;padding:5px 10px}
+.pricing-badge{color:#ffd6d9;background:rgba(213,47,62,.16);border:1px solid rgba(213,47,62,.4)}
+.pricing-limit{color:var(--gold);background:rgba(233,199,123,.08);border:1px solid rgba(233,199,123,.25)}
+.pricing-card h3{font-size:25px;margin:18px 0 0}
+.pricing-subtitle{font-size:13px;color:var(--muted);margin:2px 0 0}
+.price-block{margin:22px 0;padding:18px 0;border-block:1px solid var(--line)}
+.old-price{font-size:15px;color:#9da2b5;text-decoration:line-through;text-decoration-thickness:2px}
+.new-price{font-size:clamp(30px,7vw,42px);font-weight:900;color:#ff5362;line-height:1.5;margin-top:2px;text-shadow:0 0 24px rgba(255,83,98,.12)}
+.new-price small{font-size:14px;font-weight:700}
+.discount-note{display:block;font-size:12px;color:#ffb1b8}
+.pricing-features{list-style:none;padding:0;margin:20px 0 25px;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.pricing-features li{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:8px}
+.pricing-features li:before{content:"✓";color:var(--gold);font-weight:bold;flex:0 0 auto}
+.pricing-cta{width:100%;min-height:52px;background:#d92f40;color:#fff;border-color:#d92f40;font-size:14px;box-shadow:0 10px 24px rgba(217,47,64,.2)}
+.pricing-cta:hover{background:#ef4051;border-color:#ef4051}
+.pricing-footnote{text-align:center;color:var(--muted);font-size:11px;margin:12px 0 0}
+.service-automation{grid-column:1/-1}
+@media(max-width:800px){.feature-panel{gap:24px}}
+@media(max-width:560px){.pricing-features{grid-template-columns:1fr}.pricing-card{padding:22px 18px}.pricing-card h3{font-size:22px}.pricing-cta{font-size:13px}.service-automation{grid-column:auto}}
+
 </style>
 </head>
 <body>
@@ -117,7 +147,8 @@ footer strong{color:var(--gold)}
     <nav aria-label="ناوبری اصلی">
       <a href="#portfolio">نمونه‌کارها</a>
       <a href="#services">خدمات</a>
-      <a href="#salonyar">سالن‌یار</a>
+      <a href="#salonyar">نوبت‌یار</a>
+      <a href="#pricing">تعرفه‌ها</a>
       <a href="#contact">ارتباط با ما</a>
     </nav>
   </div>
@@ -135,7 +166,7 @@ footer strong{color:var(--gold)}
       </div>
       <p class="hero-note">برای سفارش، مستقیماً در پیام‌رسان دلخواهت پیام بده.</p>
     </div>
-    <div class="hero-art" aria-label="نمونه طراحی اپلیکیشن سالن‌یار">
+    <div class="hero-art" aria-label="نمونه طراحی اپلیکیشن نوبت‌یار">
       <div class="float-chip chip-one">✦ طراحی اختصاصی</div>
       <div class="app-poster"><img src="assets/salonyar-showcase.webp" alt="پوستر معرفی اپلیکیشن سالن‌یار و نمونه صفحات مدیریت سالن" fetchpriority="high"></div>
       <div class="float-chip chip-two">اپلیکیشن • رابط کاربری • گرافیک</div>
@@ -159,7 +190,7 @@ footer strong{color:var(--gold)}
     <div class="projects">
       <article class="project" data-category="app">
         <div class="project-media poster"><img src="assets/salonyar-showcase.webp" alt="پوستر اپلیکیشن مدیریت سالن زیبایی با نمونه سه صفحه اختصاصی" loading="lazy"></div>
-        <div class="project-info"><div class="project-meta"><h3>سالن‌یار</h3><span class="project-tag">اپلیکیشن اندروید</span></div><p>نمونه طراحی اپ مدیریت سالن زیبایی با قابلیت شخصی‌سازی نام، لوگو و ظاهر متناسب با هر سالن.</p></div>
+        <div class="project-info"><div class="project-meta"><h3>نوبت‌یار</h3><span class="project-tag">اپلیکیشن اندروید</span></div><p>نمونه طراحی اپ مدیریت سالن زیبایی با قابلیت شخصی‌سازی نام، لوگو و ظاهر متناسب با هر سالن.</p></div>
       </article>
       <article class="project" data-category="app">
         <div class="project-media"><img src="assets/taghvim-plus.webp" alt="آیکن و هویت بصری اپلیکیشن تقویم پلاس" loading="lazy"></div>
@@ -178,17 +209,20 @@ footer strong{color:var(--gold)}
     <div class="feature-panel">
       <div class="feature-copy">
         <span class="eyebrow">محصول منتخب</span>
-        <h3>سالن‌یار؛ مدیریت ساده‌تر سالن زیبایی</h3>
-        <p>یک اپلیکیشن اندرویدی قابل سفارشی‌سازی برای سالن‌هایی که می‌خواهند نوبت‌ها و اطلاعات مشتریانشان را مرتب‌تر مدیریت کنند.</p>
+        <h3>نوبت‌یار؛ سیستم مدیریت هوشمند کسب‌وکار شما</h3>
+        <p>نوبت‌یار یک اپلیکیشن اندرویدی هوشمند و قابل شخصی‌سازی برای مدیریت مشتریان، فاکتورها، گزارش‌های مالی و کارهای روزمره کسب‌وکار شماست؛ حتی بدون اتصال به اینترنت.</p>
         <ul class="feature-list">
-          <li>ثبت نوبت و اطلاعات مشتریان</li>
-          <li>رسید، فاکتور و حسابداری ساده</li>
-          <li>قابلیت شخصی‌سازی نام، لوگو و مشخصات سالن</li>
-          <li>امکان استفاده آفلاین از اطلاعات ذخیره‌شده روی دستگاه</li>
+          <li>مدیریت مشتریان و اطلاعات کسب‌وکار</li>
+          <li>صدور فاکتور و رسید</li>
+          <li>گزارش‌های مالی و مدیریتی</li>
+          <li>قابلیت شخصی‌سازی نام، لوگو و ظاهر برنامه</li>
+          <li>استفاده کاملاً آفلاین از اطلاعات ذخیره‌شده روی دستگاه</li>
         </ul>
-        <a class="btn primary" href="#contact">پرس‌وجو درباره سالن‌یار ←</a>
+        <a class="btn primary" href="#contact">پرس‌وجو درباره نوبت‌یار ←</a>
       </div>
-      <div class="feature-image"><img src="assets/salonyar-showcase.webp" alt="نمای تصویری امکانات اپلیکیشن سالن‌یار" loading="lazy"></div>
+      <div class="feature-visuals">
+        <div class="feature-image"><img src="assets/salonyar-showcase.webp" alt="نمای تصویری امکانات اپلیکیشن نوبت‌یار" loading="lazy"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -204,7 +238,29 @@ footer strong{color:var(--gold)}
       <article class="service"><div class="service-icon">▣</div><h3>طراحی اپلیکیشن</h3><p>طراحی و شخصی‌سازی اپلیکیشن اندروید متناسب با نام، لوگو و نیاز کسب‌وکار.</p></article>
       <article class="service"><div class="service-icon">✳</div><h3>رابط کاربری و هویت بصری</h3><p>طراحی ظاهر محصول، رنگ‌بندی و اجزای بصری هماهنگ با هویت برند.</p></article>
       <article class="service"><div class="service-icon">▶</div><h3>گرافیک و معرفی محصول</h3><p>پوستر، تصاویر معرفی و محتوای تصویری برای نمایش بهتر محصول و خدمات.</p></article>
+      <article class="service service-automation"><div class="service-icon">⚙</div><h3>سیستم اختصاصی اتوماسیون موبی‌گراف</h3><p>اپلیکیشن‌ها با سیستم اختصاصی اتوماسیون موبی‌گراف در کمترین زمان، متناسب با نام، هویت بصری و نیازهای کسب‌وکار شما شخصی‌سازی می‌شوند.</p></article>
     </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">PRICING / تعرفه‌ها</span>
+      <h2 class="section-title">تعرفه نوبت‌یار</h2>
+      <p class="section-desc">یک نسخه کامل، با امکانات کاربردی برای مدیریت روزمره کسب‌وکار شما.</p>
+    </div>
+    <article class="pricing-card">
+      <div class="pricing-topline"><span class="pricing-badge">پیشنهاد ویژه شروع</span><span class="pricing-limit">ویژه ۵ نفر اول</span></div>
+      <h3>اپلیکیشن نوبت‌یار</h3>
+      <p class="pricing-subtitle">نسخه کامل با قابلیت شخصی‌سازی</p>
+      <div class="price-block"><span class="old-price">۸,۰۰۰,۰۰۰ تومان</span><div class="new-price">۴,۵۰۰,۰۰۰ <small>تومان</small></div><span class="discount-note">قیمت ویژه برای ۵ نفر اول</span></div>
+      <ul class="pricing-features">
+        <li>مدیریت مشتریان</li><li>صدور فاکتور و رسید</li><li>گزارش مالی</li><li>یادآوری پیامکی با سیم‌کارت</li><li>کاملاً آفلاین</li><li>پشتیبان‌گیری</li><li>۸ تم رنگی</li><li>کلید امنیتی</li>
+      </ul>
+      <a class="btn pricing-cta" href="#contact">رزرو تخفیف ۵۰٪ (پیام دهید)</a>
+      <p class="pricing-footnote">برای بررسی نیازها و هماهنگی شخصی‌سازی، پیام بدهید.</p>
+    </article>
   </div>
 </section>
 
@@ -214,11 +270,11 @@ footer strong{color:var(--gold)}
     <h2 class="section-title">پروژه بعدی تو می‌تونه اینجا شروع بشه</h2>
     <p class="section-desc">برای دریافت مشاوره یا صحبت درباره سفارش، از پیام‌رسان دلخواهت پیام بده. فرم سفارش نداریم؛ مستقیم گفتگو می‌کنیم.</p>
     <div class="contact-links">
-      <a class="btn contact-btn telegram" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener noreferrer">✈ تلگرام <span dir="ltr">@mobigraph_ir</span></a>
-      <a class="btn contact-btn whatsapp" href="https://wa.me/989166549219" target="_blank" rel="noopener noreferrer">◉ واتساپ <span dir="ltr">پیام مستقیم</span></a>
-      <a class="btn contact-btn eitaa" href="https://eitaa.com/mobigraph_ir" target="_blank" rel="noopener noreferrer">✉ ایتا <span dir="ltr">@mobigraph_ir</span></a>
+      <a class="btn contact-btn telegram" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/telegram.png" alt=""><span class="social-label">تلگرام <span dir="ltr">@mobigraph_ir</span></span></a>
+      <a class="btn contact-btn whatsapp" href="https://wa.me/message/BYOCRV3D7DJKL1" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/whatsapp.png" alt=""><span class="social-label">واتساپ</span></a>
+      <a class="btn contact-btn eitaa" href="https://eitaa.com/mobigraph_ir" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/eitaa.png" alt=""><span class="social-label">ایتا <span dir="ltr">@mobigraph_ir</span></span></a>
     </div>
-    <p class="contact-handle">شناسه تلگرام و ایتا: <strong dir="ltr">mobigraph_ir</strong> · واتساپ با شماره ثبت‌شده شما</p>
+    <p class="contact-handle">شناسه تلگرام و ایتا: <strong dir="ltr">mobigraph_ir</strong></p>
   </div>
 </section>
 </main>
@@ -226,9 +282,9 @@ footer strong{color:var(--gold)}
   <div class="wrap footer-row"><span>© <strong>Mobigraph</strong> — طراحی اپلیکیشن و گرافیک اختصاصی</span><a href="#home">بازگشت به بالا ↑</a></div>
 </footer>
 <div class="mobile-contact" aria-label="راه‌های ارتباط سریع">
-  <a class="tg" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener noreferrer">✈ تلگرام</a>
-  <a class="wa" href="https://wa.me/989166549219" target="_blank" rel="noopener noreferrer">◉ واتساپ</a>
-  <a class="ei" href="https://eitaa.com/mobigraph_ir" target="_blank" rel="noopener noreferrer">✉ ایتا</a>
+  <a class="tg" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/telegram.png" alt="">تلگرام</a>
+  <a class="wa" href="https://wa.me/message/BYOCRV3D7DJKL1" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/whatsapp.png" alt="">واتساپ</a>
+  <a class="ei" href="https://eitaa.com/mobigraph_ir" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="assets/eitaa.png" alt="">ایتا</a>
 </div>
 <script>
 (() => {
@@ -249,3 +305,4 @@ footer strong{color:var(--gold)}
 </script>
 </body>
 </html>
+
