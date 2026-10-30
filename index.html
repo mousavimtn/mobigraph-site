@@ -88,11 +88,11 @@ section{padding:76px 0}
 .contact-btn{min-width:150px}
 .contact-btn.telegram{border-color:#2a91d2}
 .contact-btn.whatsapp{border-color:#248f4b}
- .contact-btn.eitaa{border-color:#e37600}.contact-btn.eitaa .social-icon{color:#e37600}
-    .social-icon{width:22px;height:22px;flex:0 0 22px;display:inline-block;vertical-align:middle}
-    .contact-btn,.mobile-contact a{display:inline-flex;align-items:center;justify-content:center;gap:8px}
-    .mobile-contact .social-icon{width:20px;height:20px;flex-basis:20px}
-    .social-label{display:inline-flex;align-items:center;gap:6px}
+.contact-btn.eitaa{border-color:#e37600}.contact-btn.eitaa .social-icon{color:#e37600}
+.social-icon{width:22px;height:22px;flex:0 0 22px;display:inline-block;vertical-align:middle}
+.contact-btn,.mobile-contact a{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.mobile-contact .social-icon{width:20px;height:20px;flex-basis:20px}
+.social-label{display:inline-flex;align-items:center;gap:6px}
 .contact-handle{font-size:12px;color:var(--muted);margin-top:17px}
 footer{padding:25px 0;color:var(--muted);font-size:12px}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px}
@@ -138,11 +138,9 @@ footer strong{color:var(--gold)}
 @media(max-width:800px){.feature-panel{gap:24px}}
 @media(max-width:560px){.pricing-features{grid-template-columns:1fr}.pricing-card{padding:22px 18px}.pricing-card h3{font-size:22px}.pricing-cta{font-size:13px}.service-automation{grid-column:auto}}
 
-
 /* بنر تمام‌عرض زیر منوی سایت */
 .top-banner{width:100%;margin:0;padding:0;overflow:hidden;line-height:0}
 .top-banner img{display:block;width:100%;height:auto;max-width:none;object-fit:contain}
-
 </style>
 </head>
 <body>
@@ -159,10 +157,10 @@ footer strong{color:var(--gold)}
   </div>
 </header>
 
-<!-- بنر افقی موبی‌گراف: فایل در پوشه assets با نام top-banner.png -->
 <section class="top-banner" aria-label="بنر موبی‌گراف">
   <img src="assets/top-banner.png" alt="بنر موبی‌گراف" fetchpriority="high">
 </section>
+
 <main>
 <section class="hero" id="home">
   <div class="wrap hero-grid">
@@ -228,7 +226,7 @@ footer strong{color:var(--gold)}
           <li>قابلیت شخصی‌سازی نام، لوگو و ظاهر برنامه</li>
           <li>استفاده کاملاً آفلاین از اطلاعات ذخیره‌شده روی دستگاه</li>
         </ul>
-        <a class="btn primary" href="#contact">پرس‌وجو درباره نوبت‌یار ←</a>
+        <a class="btn primary" href="https://wa.me/989166549219?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%20%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA%20%D9%86%D9%88%D8%A8%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D9%BE%DB%8C%D8%A7%D9%85%20%D8%AF%D8%A7%D8%AF%D9%87%E2%80%8C%D8%A7%D9%85." target="_blank" rel="noopener noreferrer">پرس‌وجو درباره نوبت‌یار ←</a>
       </div>
       <div class="feature-visuals">
         <div class="feature-image"><img src="assets/salonyar-showcase.webp" alt="نمای تصویری امکانات اپلیکیشن نوبت‌یار" loading="lazy"></div>
@@ -261,15 +259,29 @@ footer strong{color:var(--gold)}
       <p class="section-desc">یک نسخه کامل، با امکانات کاربردی برای مدیریت روزمره کسب‌وکار شما.</p>
     </div>
     <article class="pricing-card">
-      <div class="pricing-topline"><span class="pricing-badge">پیشنهاد ویژه شروع</span><span class="pricing-limit">ویژه ۵ نفر اول</span></div>
+      <div class="pricing-topline">
+        <span class="pricing-badge">۷۰٪ تخفیف ویژه</span>
+        <span class="pricing-limit">فقط برای ۵ مشتری اول</span>
+      </div>
       <h3>اپلیکیشن نوبت‌یار</h3>
-      <p class="pricing-subtitle">نسخه کامل با قابلیت شخصی‌سازی</p>
-      <div class="price-block"><span class="old-price">۸,۰۰۰,۰۰۰ تومان</span><div class="new-price">۲,۴۰۰,۰۰۰ <small>تومان</small></div><span class="discount-note">قیمت ویژه برای ۵ نفر اول</span></div>
+      <p class="pricing-subtitle">نسخه کامل با قابلیت شخصی‌سازی نام و لوگوی کسب‌وکار شما</p>
+      <div class="price-block">
+        <span class="old-price">۸,۰۰۰,۰۰۰ تومان</span>
+        <div class="new-price">۲,۴۰۰,۰۰۰ <small>تومان</small></div>
+        <span class="discount-note">۷۰٪ تخفیف؛ صرفه‌جویی ۵,۶۰۰,۰۰۰ تومان</span>
+      </div>
       <ul class="pricing-features">
-        <li>مدیریت مشتریان</li><li>صدور فاکتور و رسید</li><li>گزارش مالی</li><li>یادآوری پیامکی با سیم‌کارت</li><li>کاملاً آفلاین</li><li>پشتیبان‌گیری</li><li>۸ تم رنگی</li><li>کلید امنیتی</li>
+        <li>مدیریت مشتریان</li>
+        <li>صدور فاکتور و رسید</li>
+        <li>گزارش مالی</li>
+        <li>یادآوری پیامکی با سیم‌کارت</li>
+        <li>کاملاً آفلاین</li>
+        <li>پشتیبان‌گیری</li>
+        <li>۸ تم رنگی</li>
+        <li>کلید امنیتی</li>
       </ul>
-      <a class="btn pricing-cta" href="#contact">رزرو تخفیف ۵۰٪ (پیام دهید)</a>
-      <p class="pricing-footnote">برای بررسی نیازها و هماهنگی شخصی‌سازی، پیام بدهید.</p>
+      <a class="btn pricing-cta" href="https://wa.me/989166549219?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B1%D8%B2%D8%B1%D9%88%20%D9%86%D9%88%D8%A8%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%D8%A7%20%D8%AA%D8%AE%D9%81%DB%8C%D9%81%207۰%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C%20%D9%BE%DB%8C%D8%A7%D9%85%20%D8%AF%D8%A7%D8%AF%D9%87%E2%80%8C%D8%A7%D9%85." target="_blank" rel="noopener noreferrer">رزرو تخفیف ۷۰٪ از طریق واتساپ</a>
+      <p class="pricing-footnote">برای بررسی نیازها، ثبت سفارش و هماهنگی شخصی‌سازی، در واتساپ پیام بدهید.</p>
     </article>
   </div>
 </section>
@@ -281,21 +293,24 @@ footer strong{color:var(--gold)}
     <p class="section-desc">برای دریافت مشاوره یا صحبت درباره سفارش، از پیام‌رسان دلخواهت پیام بده. فرم سفارش نداریم؛ مستقیم گفتگو می‌کنیم.</p>
     <div class="contact-links">
       <a class="btn contact-btn telegram" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="تلگرام" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#229ED9"/><path d="M5.1 11.5 18 6.6c.6-.2 1.1.2.9 1l-2.2 10.2c-.2.7-.7.9-1.3.5l-3.6-2.7-1.8 1.7c-.2.2-.4.3-.6.3l.3-3.8 6.9-6.2c.3-.3-.1-.4-.4-.2l-8.5 5.4-3.7-1.2c-.8-.2-.8-.8 1.1-1.5Z" fill="#fff"/></svg><span class="social-label">تلگرام <span dir="ltr">@mobigraph_ir</span></span></a>
-      <a class="btn contact-btn whatsapp" href="https://wa.me/message/BYOCRV3D7DJKL1" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="واتساپ" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M6.1 18.3 7 15.2a7.1 7.1 0 1 1 2.2 2.1l-3.1 1Zm3.3-2.2.4.2a5.2 5.2 0 1 0-1.3-1.3l.2.4-.5 1.5 1.2-.8Zm5.1-2.8c-.2-.1-1-.5-1.2-.5s-.3-.1-.5.1-.5.5-.6.6-.2.1-.4 0a4.4 4.4 0 0 1-1.3-.8 4.9 4.9 0 0 1-.9-1.1c-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.3l-.5-1.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.6s.7 1.8.8 1.9a7.5 7.5 0 0 0 2.9 2.6c.4.2.8.3 1 .4.4.1.8.1 1.1.1.3-.1 1-.4 1.1-.8.1-.4.1-.7.1-.8s-.1-.2-.3-.3Z"/></svg><span class="social-label">واتساپ</span></a>
+      <a class="btn contact-btn whatsapp" href="https://wa.me/989166549219" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="واتساپ" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M6.1 18.3 7 15.2a7.1 7.1 0 1 1 2.2 2.1l-3.1 1Zm3.3-2.2.4.2a5.2 5.2 0 1 0-1.3-1.3l.2.4-.5 1.5 1.2-.8Zm5.1-2.8c-.2-.1-1-.5-1.2-.5s-.3-.1-.5.1-.5.5-.6.6-.2.1-.4 0a4.4 4.4 0 0 1-1.3-.8 4.9 4.9 0 0 1-.9-1.1c-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.3l-.5-1.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.6s.7 1.8.8 1.9a7.5 7.5 0 0 0 2.9 2.6c.4.2.8.3 1 .4.4.1.8.1 1.1.1.3-.1 1-.4 1.1-.8.1-.4.1-.7.1-.8s-.1-.2-.3-.3Z"/></svg><span class="social-label">واتساپ</span></a>
       <a class="btn contact-btn eitaa" href="https://eitaa.com/mobigraph_ir" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="ایتا" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#F28C28"/><path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v5a2.5 2.5 0 0 1-2.5 2.5H11l-3.5 3v-3.2A2.5 2.5 0 0 1 6 12.5Z" fill="#fff"/><circle cx="9" cy="10" r=".8" fill="#F28C28"/><circle cx="12" cy="10" r=".8" fill="#F28C28"/><circle cx="15" cy="10" r=".8" fill="#F28C28"/></svg><span class="social-label">ایتا <span dir="ltr">@mobigraph_ir</span></span></a>
     </div>
     <p class="contact-handle">شناسه تلگرام و ایتا: <strong dir="ltr">mobigraph_ir</strong></p>
   </div>
 </section>
 </main>
+
 <footer>
   <div class="wrap footer-row"><span>© <strong>Mobigraph</strong> — طراحی اپلیکیشن و گرافیک اختصاصی</span><a href="#home">بازگشت به بالا ↑</a></div>
 </footer>
+
 <div class="mobile-contact" aria-label="راه‌های ارتباط سریع">
   <a class="tg" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="تلگرام" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#229ED9"/><path d="M5.1 11.5 18 6.6c.6-.2 1.1.2.9 1l-2.2 10.2c-.2.7-.7.9-1.3.5l-3.6-2.7-1.8 1.7c-.2.2-.4.3-.6.3l.3-3.8 6.9-6.2c.3-.3-.1-.4-.4-.2l-8.5 5.4-3.7-1.2c-.8-.2-.8-.8 1.1-1.5Z" fill="#fff"/></svg>تلگرام</a>
-  <a class="wa" href="https://wa.me/message/BYOCRV3D7DJKL1" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="واتساپ" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M6.1 18.3 7 15.2a7.1 7.1 0 1 1 2.2 2.1l-3.1 1Zm3.3-2.2.4.2a5.2 5.2 0 1 0-1.3-1.3l.2.4-.5 1.5 1.2-.8Zm5.1-2.8c-.2-.1-1-.5-1.2-.5s-.3-.1-.5.1-.5.5-.6.6-.2.1-.4 0a4.4 4.4 0 0 1-1.3-.8 4.9 4.9 0 0 1-.9-1.1c-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.3l-.5-1.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.6s.7 1.8.8 1.9a7.5 7.5 0 0 0 2.9 2.6c.4.2.8.3 1 .4.4.1.8.1 1.1.1.3-.1 1-.4 1.1-.8.1-.4.1-.7.1-.8s-.1-.2-.3-.3Z"/></svg>واتساپ</a>
+  <a class="wa" href="https://wa.me/989166549219" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="واتساپ" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M6.1 18.3 7 15.2a7.1 7.1 0 1 1 2.2 2.1l-3.1 1Zm3.3-2.2.4.2a5.2 5.2 0 1 0-1.3-1.3l.2.4-.5 1.5 1.2-.8Zm5.1-2.8c-.2-.1-1-.5-1.2-.5s-.3-.1-.5.1-.5.5-.6.6-.2.1-.4 0a4.4 4.4 0 0 1-1.3-.8 4.9 4.9 0 0 1-.9-1.1c-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.3l-.5-1.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.6s.7 1.8.8 1.9a7.5 7.5 0 0 0 2.9 2.6c.4.2.8.3 1 .4.4.1.8.1 1.1.1.3-.1 1-.4 1.1-.8.1-.4.1-.7.1-.8s-.1-.2-.3-.3Z"/></svg>واتساپ</a>
   <a class="ei" href="https://eitaa.com/mobigraph_ir" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="ایتا" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#F28C28"/><path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v5a2.5 2.5 0 0 1-2.5 2.5H11l-3.5 3v-3.2A2.5 2.5 0 0 1 6 12.5Z" fill="#fff"/><circle cx="9" cy="10" r=".8" fill="#F28C28"/><circle cx="12" cy="10" r=".8" fill="#F28C28"/><circle cx="15" cy="10" r=".8" fill="#F28C28"/></svg>ایتا</a>
 </div>
+
 <script>
 (() => {
   const buttons = document.querySelectorAll('.filter');
@@ -314,4 +329,4 @@ footer strong{color:var(--gold)}
 })();
 </script>
 </body>
-</html>
+                                                                                                                           </html>
