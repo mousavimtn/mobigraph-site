@@ -57,12 +57,12 @@ section{padding:76px 0}
 .projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .project{background:var(--panel);border:1px solid var(--line);border-radius:19px;overflow:hidden;transition:transform .22s,border-color .22s}
 .project:hover{transform:translateY(-5px);border-color:#756644}
-.project-media{background:#0c1020;aspect-ratio:4/4.3;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.project-media{background:#0c1020;aspect-ratio:4/4.3;overflow:hidden;display:flex;align-items:center;justify-content:center}.project-media.video{display:block;border-radius:0}
 .project-media img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .project:hover .project-media img{transform:scale(1.025)}
 .project-media.poster img{object-fit:contain;object-position:center top}
-.project-media.video{aspect-ratio:4/4.3}
-.project-media video{height:100%;width:100%;object-fit:cover}
+.project-media.video{aspect-ratio:9/16}
+.project-media.video>div{width:100%;height:100%;min-height:0}.project-media.video iframe{display:block;width:100%;height:100%;min-height:0;border:0}
 .project-info{padding:19px}
 .project-meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .project h3{font-size:17px;margin:0}
@@ -77,6 +77,8 @@ section{padding:76px 0}
 .feature-list li:before{content:"✓";color:var(--gold);margin-left:9px;font-weight:bold}
 .feature-image{border-radius:17px;overflow:hidden;border:1px solid rgba(233,199,123,.25);background:#fff}
 .feature-image img{width:100%;height:auto}
+.feature-visuals{display:grid;gap:16px;align-content:center;min-width:0}
+.feature-visuals iframe{max-width:100%}
 .services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .service{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:17px}
 .service-icon{display:grid;place-items:center;width:45px;height:45px;border-radius:13px;background:rgba(233,199,123,.1);color:var(--gold);font-size:23px}
@@ -107,7 +109,7 @@ footer strong{color:var(--gold)}
 @media(max-width:560px){
  .wrap{width:min(100% - 30px,1120px)}.nav{flex-wrap:wrap;padding:11px 0;justify-content:center}.brand img{width:165px}nav{width:100%;justify-content:center;gap:18px;padding-bottom:4px}
  .hero{padding:42px 0 48px}h1{font-size:34px}.lead{font-size:14px}.hero-art{max-width:320px}.float-chip{font-size:11px;padding:9px 11px}
- .projects,.services-grid{grid-template-columns:1fr}.project-media{aspect-ratio:4/3}.project-media.poster{aspect-ratio:4/4.2}.project-media.video{aspect-ratio:9/12}
+ .projects,.services-grid{grid-template-columns:1fr}.project-media{aspect-ratio:4/3}.project-media.poster{aspect-ratio:4/4.2}.project-media.video{aspect-ratio:9/16}
  .feature-panel{padding:20px}.contact-links{display:grid;grid-template-columns:1fr}.contact-btn{width:100%}
  .footer-row{flex-direction:column;text-align:center}.mobile-contact{display:flex;position:fixed;z-index:30;bottom:10px;left:12px;right:12px;gap:8px;padding:8px;background:rgba(16,19,35,.94);border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(12px);box-shadow:0 10px 30px #050711}.mobile-contact a{flex:1;padding:9px 4px;font-size:11px;border-radius:9px;text-align:center}.mobile-contact .wa{background:#1b7540}.mobile-contact .tg{background:#185b83}.mobile-contact .ei{background:#292f49}.mobile-contact .ei .social-icon{color:#e37600}
  body{padding-bottom:74px}
@@ -144,14 +146,14 @@ footer strong{color:var(--gold)}
 
 /* ویدئوی معرفی نوبت‌یار از آپارات */
 .aparat-video{width:100%;max-width:650px;margin:0 auto 18px;border:1px solid rgba(233,199,123,.25);border-radius:17px;overflow:hidden;background:#0c1020}
-.aparat-video iframe{display:block;width:100%;max-width:100%;border:0}
+.aparat-video iframe{display:block;width:100%;max-width:100%;border:0;aspect-ratio:16/9}
 
 .calendar-feature{padding:0 0 78px}
 .calendar-feature .feature-panel{grid-template-columns:.9fr 1.1fr}
 .calendar-feature .feature-list{columns:2;column-gap:22px}
 .calendar-feature .feature-list li{break-inside:avoid}
 .calendar-video{width:100%;max-width:650px;margin:0 auto 18px;border:1px solid rgba(233,199,123,.25);border-radius:17px;overflow:hidden;background:#0c1020}
-.calendar-video iframe{display:block;width:100%;max-width:100%;border:0}
+.calendar-video iframe{display:block;width:100%;max-width:100%;border:0;aspect-ratio:16/9}
 .bazaar-btn{background:#18a66a;color:#fff;border-color:#18a66a}
 .bazaar-btn:hover{background:#128653;border-color:#128653}
 .project-link{display:inline-flex;margin-top:13px;color:var(--gold);font-size:12px;font-weight:700;border-bottom:1px solid rgba(233,199,123,.45);padding-bottom:2px}
@@ -225,7 +227,7 @@ footer strong{color:var(--gold)}
         <div class="project-info"><div class="project-meta"><h3>تقویم پلاس</h3><span class="project-tag">اپلیکیشن اندروید</span></div><p>تقویم فارسی با مناسبت‌ها، اوقات شرعی، اذان، هواشناسی و ابزارهای کاربردی؛ منتشرشده در کافه‌بازار.</p><a class="project-link" href="https://cafebazaar.ir/app/?id=ir.mobigraph.taghvim&amp;ref=share" target="_blank" rel="noopener noreferrer">مشاهده و دانلود از بازار ←</a></div>
       </article>
       <article class="project" data-category="video">
-        <div class="project-media video"><video controls preload="metadata" playsinline poster="assets/nobatyar-poster.webp" aria-label="ویدئوی معرفی محصول نوبت‌یار"><source src="assets/nobatyar-reel.mp4" type="video/mp4">مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.</video></div>
+        <div class="project-media video"><div id="24169640701"><script type="text/JavaScript" src="https://www.aparat.com/embed/vic0p7s?data[rnddiv]=24169640701&data[responsive]=yes&titleShow=true"></script></div></div>
         <div class="project-info"><div class="project-meta"><h3>معرفی نوبت‌یار</h3><span class="project-tag">ویدئوی تبلیغاتی</span></div><p>ویدئوی عمودی معرفی محصول؛ مناسب نمایش در شبکه‌های اجتماعی و صفحه معرفی پروژه.</p></div>
       </article>
     </div>
@@ -254,7 +256,7 @@ footer strong{color:var(--gold)}
             <script type="text/JavaScript" src="https://www.aparat.com/embed/bbu0mw7?data[rnddiv]=95184774780&data[responsive]=yes&recom=self"></script>
           </div>
         </div>
-        <div class="feature-image"><img src="assets/salonyar-showcase.webp" alt="نمای تصویری امکانات اپلیکیشن نوبت‌یار" loading="lazy"></div>
+        
       </div>
     </div>
   </div>
