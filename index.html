@@ -61,8 +61,11 @@ section{padding:76px 0}
 .project-media img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .project:hover .project-media img{transform:scale(1.025)}
 .project-media.poster img{object-fit:contain;object-position:center top}
-.project-media.video{aspect-ratio:9/16}
-.project-media.video>div{width:100%;height:100%;min-height:0}.project-media.video iframe{display:block;width:100%;height:100%;min-height:0;border:0}
+/* کارت ویدئوی عمودی آپارات: جلوگیری از فضای سیاه زیر ویدئو */
+.project-media.video{display:block;aspect-ratio:auto;height:auto;overflow:hidden;background:#0c1020}
+.project-media.video>div{position:relative;width:100%;height:auto;aspect-ratio:9/16;min-height:0;overflow:hidden}
+.project-media.video iframe{position:absolute!important;inset:0!important;display:block;width:100%!important;height:100%!important;min-height:0!important;border:0!important}
+.project-media.video>div>iframe{max-width:none!important}
 .project-info{padding:19px}
 .project-meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .project h3{font-size:17px;margin:0}
@@ -100,16 +103,16 @@ footer{padding:25px 0;color:var(--muted);font-size:12px}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px}
 footer strong{color:var(--gold)}
 .mobile-contact{display:none}
-@media(max-width:800px){
- .nav{min-height:68px}.brand img{width:175px}nav{gap:13px;font-size:12px}
+@media(max-width:1000px){
+ .nav{min-height:68px}.brand img{width:175px}nav{gap:13px;font-size:12px;flex-wrap:wrap;justify-content:center}
  .hero{padding:52px 0}.hero-grid{grid-template-columns:1fr;gap:38px}.hero-copy{text-align:center}.lead{margin:auto}.hero-actions{justify-content:center}.hero-art{max-width:390px}
- .projects{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-panel{grid-template-columns:1fr}.feature-image{max-width:560px;margin:auto;order:2}
+ .projects{grid-template-columns:1fr}.feature-panel{grid-template-columns:1fr}.feature-image{max-width:560px;margin:auto;order:2}
  section{padding:58px 0}.product-feature{padding:0 0 58px}
 }
 @media(max-width:560px){
- .wrap{width:min(100% - 30px,1120px)}.nav{flex-wrap:wrap;padding:11px 0;justify-content:center}.brand img{width:165px}nav{width:100%;justify-content:center;gap:18px;padding-bottom:4px}
+ .wrap{width:min(100% - 30px,1120px)}.nav{flex-wrap:wrap;padding:11px 0;justify-content:center}.brand img{width:165px}nav{width:100%;justify-content:center;gap:8px 14px;padding:5px 0 4px;font-size:11px;flex-wrap:wrap}
  .hero{padding:42px 0 48px}h1{font-size:34px}.lead{font-size:14px}.hero-art{max-width:320px}.float-chip{font-size:11px;padding:9px 11px}
- .projects,.services-grid{grid-template-columns:1fr}.project-media{aspect-ratio:4/3}.project-media.poster{aspect-ratio:4/4.2}.project-media.video{aspect-ratio:9/16}
+ .projects,.services-grid{grid-template-columns:1fr}.project-media{aspect-ratio:4/3}.project-media.poster{aspect-ratio:4/4.2}.project-media.video{aspect-ratio:auto}
  .feature-panel{padding:20px}.contact-links{display:grid;grid-template-columns:1fr}.contact-btn{width:100%}
  .footer-row{flex-direction:column;text-align:center}.mobile-contact{display:flex;position:fixed;z-index:30;bottom:10px;left:12px;right:12px;gap:8px;padding:8px;background:rgba(16,19,35,.94);border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(12px);box-shadow:0 10px 30px #050711}.mobile-contact a{flex:1;padding:9px 4px;font-size:11px;border-radius:9px;text-align:center}.mobile-contact .wa{background:#1b7540}.mobile-contact .tg{background:#185b83}.mobile-contact .ei{background:#292f49}.mobile-contact .ei .social-icon{color:#e37600}
  body{padding-bottom:74px}
@@ -195,11 +198,6 @@ footer strong{color:var(--gold)}
         <a class="btn secondary" href="#contact">شروع گفتگو</a>
       </div>
       <p class="hero-note">برای سفارش، مستقیماً در پیام‌رسان دلخواهت پیام بده.</p>
-    </div>
-    <div class="hero-art" aria-label="نمونه طراحی اپلیکیشن نوبت‌یار">
-      <div class="float-chip chip-one">✦ طراحی اختصاصی</div>
-      <div class="app-poster"><img src="assets/salonyar-showcase.webp" alt="پوستر معرفی اپلیکیشن سالن‌یار و نمونه صفحات مدیریت سالن" fetchpriority="high"></div>
-      <div class="float-chip chip-two">اپلیکیشن • رابط کاربری • گرافیک</div>
     </div>
   </div>
 </section>
