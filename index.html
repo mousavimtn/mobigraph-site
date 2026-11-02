@@ -11,24 +11,36 @@
 <title>موبی‌گراف | طراحی اپلیکیشن و گرافیک اختصاصی</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
+/* ========== پایه ========== */
 :root{--bg:#101323;--panel:#191e32;--panel2:#202640;--gold:#e9c77b;--gold2:#f4d99a;--text:#f6f5f1;--muted:#b4b8ca;--line:#30364d;--green:#27c866}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.9}
 a{color:inherit;text-decoration:none}
-button,a{ -webkit-tap-highlight-color:transparent}
+button,a{-webkit-tap-highlight-color:transparent}
 img,video{max-width:100%;display:block}
 .wrap{width:min(1120px,92%);margin-inline:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(16,19,35,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(233,199,123,.14)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
-.brand img{width:220px;height:auto}
-nav{display:flex;align-items:center;gap:23px;font-size:13px;color:var(--muted)}
-nav a:hover{color:var(--gold)}
+section{padding:76px 0}
+
+/* ========== دکمه‌ها ========== */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:12px;border:1px solid var(--line);font:inherit;font-size:14px;font-weight:700;transition:transform .2s,border-color .2s,background .2s;cursor:pointer}
 .btn:hover{transform:translateY(-2px);border-color:var(--gold)}
 .primary{background:var(--gold);color:#191827;border-color:var(--gold)}
 .primary:hover{background:var(--gold2)}
 .secondary{background:rgba(255,255,255,.025);color:var(--text)}
+.bazaar-btn{background:#18a66a;color:#fff;border-color:#18a66a}
+.bazaar-btn:hover{background:#128653;border-color:#128653}
+
+/* ========== هدر و بنر ========== */
+header{position:sticky;top:0;z-index:20;background:rgba(16,19,35,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(233,199,123,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
+.brand img{width:220px;height:auto}
+nav{display:flex;align-items:center;gap:23px;font-size:13px;color:var(--muted)}
+nav a:hover{color:var(--gold)}
+.top-banner{width:100%;margin:0;padding:0;overflow:hidden;line-height:0}
+.top-banner img{display:block;width:100%;height:auto;max-width:none;object-fit:contain}
+
+/* ========== بخش اصلی (Hero) ========== */
 .hero{position:relative;overflow:hidden;padding:72px 0 66px;background:radial-gradient(ellipse at 78% 25%,rgba(90,76,126,.34),transparent 42%),radial-gradient(ellipse at 15% 80%,rgba(233,199,123,.09),transparent 34%)}
 .hero:after{content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(233,199,123,.25);border-radius:50%;left:-220px;bottom:-330px;pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:48px}
@@ -44,31 +56,36 @@ h1 span{color:var(--gold)}
 .app-poster{position:relative;transform:rotate(2deg);width:min(100%,360px);margin:auto;border:1px solid rgba(233,199,123,.35);border-radius:26px;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.42)}
 .app-poster img{width:100%;height:auto}
 .float-chip{position:absolute;z-index:2;background:rgba(25,30,50,.94);border:1px solid rgba(233,199,123,.35);border-radius:14px;padding:12px 15px;box-shadow:0 12px 35px #080a14;color:var(--gold);font-size:13px}
-.chip-one{top:10%;right:-4%}.chip-two{bottom:11%;left:-6%;color:var(--text)}
-section{padding:76px 0}
+.chip-one{top:10%;right:-4%}
+.chip-two{bottom:11%;left:-6%;color:var(--text)}
+
+/* ========== تیتر بخش‌ها ========== */
 .section-head{text-align:center;max-width:690px;margin:0 auto 35px}
 .kicker{font-size:12px;color:var(--gold);letter-spacing:.4px}
 .section-title{font-size:clamp(25px,3vw,35px);line-height:1.5;margin:6px 0 9px}
 .section-desc{font-size:14px;color:var(--muted);margin:0}
+
+/* ========== نمونه‌کارها ========== */
 .portfolio{background:linear-gradient(180deg,rgba(255,255,255,.015),transparent)}
 .filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:28px}
 .filter{font-family:inherit;font-size:12px;color:var(--muted);background:transparent;border:1px solid var(--line);padding:8px 15px;border-radius:50px;cursor:pointer}
 .filter.active,.filter:hover{color:#191827;background:var(--gold);border-color:var(--gold)}
-.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:820px;margin-inline:auto}
 .project{background:var(--panel);border:1px solid var(--line);border-radius:19px;overflow:hidden;transition:transform .22s,border-color .22s}
 .project:hover{transform:translateY(-5px);border-color:#756644}
 .project-media{background:#0c1020;aspect-ratio:4/4.3;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .project-media img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .project:hover .project-media img{transform:scale(1.025)}
 .project-media.poster img{object-fit:contain;object-position:center top}
-.project-media.video{aspect-ratio:4/4.3}
-.project-media video{height:100%;width:100%;object-fit:cover}
 .project-info{padding:19px}
 .project-meta{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .project h3{font-size:17px;margin:0}
 .project-tag{font-size:10px;color:var(--gold);border:1px solid #66583c;border-radius:30px;padding:3px 8px;white-space:nowrap}
 .project p{color:var(--muted);font-size:12px;margin:9px 0 0}
-.product-feature{padding:0 0 78px}
+.project-link{display:inline-flex;margin-top:13px;color:var(--gold);font-size:12px;font-weight:700;border-bottom:1px solid rgba(233,199,123,.45);padding-bottom:2px}
+
+/* ========== معرفی محصولات (نوبت‌یار و تقویم پلاس) ========== */
+.product-feature,.calendar-feature{padding:0 0 78px}
 .feature-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:38px;align-items:center;background:linear-gradient(135deg,#24253a,#171c30);border:1px solid #66583c;border-radius:25px;padding:30px}
 .feature-copy h3{font-size:clamp(25px,3vw,34px);margin:9px 0}
 .feature-copy p{font-size:14px;color:var(--muted)}
@@ -77,43 +94,23 @@ section{padding:76px 0}
 .feature-list li:before{content:"✓";color:var(--gold);margin-left:9px;font-weight:bold}
 .feature-image{border-radius:17px;overflow:hidden;border:1px solid rgba(233,199,123,.25);background:#fff}
 .feature-image img{width:100%;height:auto}
+.aparat-video,.calendar-video{width:100%;max-width:650px;margin:0 auto 18px;border:1px solid rgba(233,199,123,.25);border-radius:17px;overflow:hidden;background:#0c1020}
+.aparat-video iframe,.calendar-video iframe{display:block;width:100%;max-width:100%;border:0}
+.calendar-video{min-height:220px}
+.calendar-feature .feature-panel{grid-template-columns:1fr 1fr}
+.calendar-feature .feature-copy h3{font-size:clamp(24px,3vw,32px)}
+.calendar-feature .feature-list{columns:2;column-gap:22px}
+.calendar-feature .feature-list li{break-inside:avoid}
+
+/* ========== خدمات ========== */
 .services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .service{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:17px}
 .service-icon{display:grid;place-items:center;width:45px;height:45px;border-radius:13px;background:rgba(233,199,123,.1);color:var(--gold);font-size:23px}
 .service h3{font-size:17px;margin:12px 0 4px}
 .service p{font-size:13px;color:var(--muted);margin:0}
-.contact{background:radial-gradient(ellipse at 50% 0,rgba(233,199,123,.1),transparent 58%),#151a2c;border-block:1px solid var(--line);text-align:center}
-.contact-box{max-width:760px;margin:auto}
-.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:27px}
-.contact-btn{min-width:150px}
-.contact-btn.telegram{border-color:#2a91d2}
-.contact-btn.whatsapp{border-color:#248f4b}
-.contact-btn.eitaa{border-color:#e37600}.contact-btn.eitaa .social-icon{color:#e37600}
-.social-icon{width:22px;height:22px;flex:0 0 22px;display:inline-block;vertical-align:middle}
-.contact-btn,.mobile-contact a{display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.mobile-contact .social-icon{width:20px;height:20px;flex-basis:20px}
-.social-label{display:inline-flex;align-items:center;gap:6px}
-.contact-handle{font-size:12px;color:var(--muted);margin-top:17px}
-footer{padding:25px 0;color:var(--muted);font-size:12px}
-.footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px}
-footer strong{color:var(--gold)}
-.mobile-contact{display:none}
-@media(max-width:800px){
- .nav{min-height:68px}.brand img{width:175px}nav{gap:13px;font-size:12px}
- .hero{padding:52px 0}.hero-grid{grid-template-columns:1fr;gap:38px}.hero-copy{text-align:center}.lead{margin:auto}.hero-actions{justify-content:center}.hero-art{max-width:390px}
- .projects{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-panel{grid-template-columns:1fr}.feature-image{max-width:560px;margin:auto;order:2}
- section{padding:58px 0}.product-feature{padding:0 0 58px}
-}
-@media(max-width:560px){
- .wrap{width:min(100% - 30px,1120px)}.nav{flex-wrap:wrap;padding:11px 0;justify-content:center}.brand img{width:165px}nav{width:100%;justify-content:center;gap:18px;padding-bottom:4px}
- .hero{padding:42px 0 48px}h1{font-size:34px}.lead{font-size:14px}.hero-art{max-width:320px}.float-chip{font-size:11px;padding:9px 11px}
- .projects,.services-grid{grid-template-columns:1fr}.project-media{aspect-ratio:4/3}.project-media.poster{aspect-ratio:4/4.2}.project-media.video{aspect-ratio:9/12}
- .feature-panel{padding:20px}.contact-links{display:grid;grid-template-columns:1fr}.contact-btn{width:100%}
- .footer-row{flex-direction:column;text-align:center}.mobile-contact{display:flex;position:fixed;z-index:30;bottom:10px;left:12px;right:12px;gap:8px;padding:8px;background:rgba(16,19,35,.94);border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(12px);box-shadow:0 10px 30px #050711}.mobile-contact a{flex:1;padding:9px 4px;font-size:11px;border-radius:9px;text-align:center}.mobile-contact .wa{background:#1b7540}.mobile-contact .tg{background:#185b83}.mobile-contact .ei{background:#292f49}.mobile-contact .ei .social-icon{color:#e37600}
- body{padding-bottom:74px}
-}
+.service-automation{grid-column:1/-1}
 
-/* تعرفه‌ها */
+/* ========== تعرفه‌ها ========== */
 .pricing-section{background:linear-gradient(180deg,rgba(255,255,255,.015),transparent 70%)}
 .pricing-card{position:relative;max-width:570px;margin:0 auto;padding:clamp(22px,5vw,36px);border:1px solid rgba(233,199,123,.38);border-radius:24px;background:linear-gradient(145deg,#202640,#151a2d);box-shadow:0 24px 70px rgba(0,0,0,.22);overflow:hidden}
 .pricing-card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,#c72b3b,#f06a72,#e9c77b)}
@@ -134,20 +131,83 @@ footer strong{color:var(--gold)}
 .pricing-cta{width:100%;min-height:52px;background:#d92f40;color:#fff;border-color:#d92f40;font-size:14px;box-shadow:0 10px 24px rgba(217,47,64,.2)}
 .pricing-cta:hover{background:#ef4051;border-color:#ef4051}
 .pricing-footnote{text-align:center;color:var(--muted);font-size:11px;margin:12px 0 0}
-.service-automation{grid-column:1/-1}
-@media(max-width:800px){.feature-panel{gap:24px}}
-@media(max-width:560px){.pricing-features{grid-template-columns:1fr}.pricing-card{padding:22px 18px}.pricing-card h3{font-size:22px}.pricing-cta{font-size:13px}.service-automation{grid-column:auto}}
 
-/* بنر تمام‌عرض زیر منوی سایت */
-.top-banner{width:100%;margin:0;padding:0;overflow:hidden;line-height:0}
-.top-banner img{display:block;width:100%;height:auto;max-width:none;object-fit:contain}
+/* ========== ارتباط با ما ========== */
+.contact{background:radial-gradient(ellipse at 50% 0,rgba(233,199,123,.1),transparent 58%),#151a2c;border-block:1px solid var(--line);text-align:center}
+.contact-box{max-width:760px;margin:auto}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:27px}
+.contact-btn{min-width:150px}
+.contact-btn.telegram{border-color:#2a91d2}
+.contact-btn.whatsapp{border-color:#248f4b}
+.contact-btn.eitaa{border-color:#e37600}
+.contact-btn.eitaa .social-icon{color:#e37600}
+.contact-btn,.mobile-contact a{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.social-icon{width:22px;height:22px;flex:0 0 22px;display:inline-block;vertical-align:middle}
+.social-label{display:inline-flex;align-items:center;gap:6px}
+.contact-handle{font-size:12px;color:var(--muted);margin-top:17px}
+.mobile-contact{display:none}
+.mobile-contact .social-icon{width:20px;height:20px;flex-basis:20px}
 
-/* ویدئوی معرفی نوبت‌یار از آپارات */
-.aparat-video{width:100%;max-width:650px;margin:0 auto 18px;border:1px solid rgba(233,199,123,.25);border-radius:17px;overflow:hidden;background:#0c1020}
-.aparat-video iframe{display:block;width:100%;max-width:100%;border:0}
+/* ========== فوتر ========== */
+footer{padding:25px 0;color:var(--muted);font-size:12px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:15px}
+footer strong{color:var(--gold)}
+
+/* ========== تبلت ========== */
+@media(max-width:800px){
+  .nav{min-height:68px}
+  .brand img{width:175px}
+  nav{gap:13px;font-size:12px}
+  section{padding:58px 0}
+  .product-feature,.calendar-feature{padding:0 0 58px}
+  .hero{padding:52px 0}
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .hero-copy{text-align:center}
+  .lead{margin:auto}
+  .hero-actions{justify-content:center}
+  .hero-art{max-width:390px}
+  .feature-panel,.calendar-feature .feature-panel{grid-template-columns:1fr;gap:24px}
+  .feature-image{max-width:560px;margin:auto;order:2}
+  .calendar-feature .feature-list{columns:1}
+  .calendar-video{min-height:190px}
+}
+
+/* ========== موبایل ========== */
+@media(max-width:560px){
+  body{padding-bottom:74px}
+  .wrap{width:min(100% - 30px,1120px)}
+  .nav{flex-wrap:wrap;padding:11px 0;justify-content:center}
+  .brand img{width:165px}
+  nav{width:100%;justify-content:center;gap:18px;padding-bottom:4px}
+  .hero{padding:42px 0 48px}
+  h1{font-size:34px}
+  .lead{font-size:14px}
+  .hero-art{max-width:320px}
+  .float-chip{font-size:11px;padding:9px 11px}
+  .projects,.services-grid{grid-template-columns:1fr}
+  .project-media{aspect-ratio:4/3}
+  .project-media.poster{aspect-ratio:4/4.2}
+  .service-automation{grid-column:auto}
+  .feature-panel{padding:20px}
+  .pricing-card{padding:22px 18px}
+  .pricing-card h3{font-size:22px}
+  .pricing-features{grid-template-columns:1fr}
+  .pricing-cta{font-size:13px}
+  .contact-links{display:grid;grid-template-columns:1fr}
+  .contact-btn{width:100%}
+  .footer-row{flex-direction:column;text-align:center}
+  .mobile-contact{display:flex;position:fixed;z-index:30;bottom:10px;left:12px;right:12px;gap:8px;padding:8px;background:rgba(16,19,35,.94);border:1px solid var(--line);border-radius:15px;backdrop-filter:blur(12px);box-shadow:0 10px 30px #050711}
+  .mobile-contact a{flex:1;padding:9px 4px;font-size:11px;border-radius:9px;text-align:center}
+  .mobile-contact .wa{background:#1b7540}
+  .mobile-contact .tg{background:#185b83}
+  .mobile-contact .ei{background:#292f49}
+  .mobile-contact .ei .social-icon{color:#e37600}
+}
 </style>
 </head>
 <body>
+
+<!-- ========== هدر ========== -->
 <header>
   <div class="wrap nav">
     <a class="brand" href="#home" aria-label="موبی‌گراف، صفحه اصلی"><img src="assets/mobigraph-logo.svg" alt="لوگوی موبی‌گراف"></a>
@@ -155,17 +215,21 @@ footer strong{color:var(--gold)}
       <a href="#portfolio">نمونه‌کارها</a>
       <a href="#services">خدمات</a>
       <a href="#salonyar">نوبت‌یار</a>
+      <a href="#taghvim-plus">تقویم پلاس</a>
       <a href="#pricing">تعرفه‌ها</a>
       <a href="#contact">ارتباط با ما</a>
     </nav>
   </div>
 </header>
 
+<!-- ========== بنر ========== -->
 <section class="top-banner" aria-label="بنر موبی‌گراف">
   <img src="assets/top-banner.png" alt="بنر موبی‌گراف" fetchpriority="high">
 </section>
 
 <main>
+
+<!-- ========== Hero ========== -->
 <section class="hero" id="home">
   <div class="wrap hero-grid">
     <div class="hero-copy">
@@ -186,6 +250,7 @@ footer strong{color:var(--gold)}
   </div>
 </section>
 
+<!-- ========== نمونه‌کارها ========== -->
 <section class="portfolio" id="portfolio">
   <div class="wrap">
     <div class="section-head">
@@ -193,18 +258,27 @@ footer strong{color:var(--gold)}
       <h2 class="section-title">ویترین کارهای موبی‌گراف</h2>
       <p class="section-desc">نمونه‌هایی از محصولات و طراحی‌های آماده‌شده؛ برای دیدن جزئیات، هر پروژه را بررسی کن.</p>
     </div>
-    <div class="filters" aria-label="فیلتر نمونه‌کارها">
-      <button class="filter active" type="button" data-filter="all" aria-pressed="true">همه پروژه‌ها</button>
-      <button class="filter" type="button" data-filter="app" aria-pressed="false">اپلیکیشن</button>
-      <button class="filter" type="button" data-filter="design" aria-pressed="false">طراحی و گرافیک</button>
-      <button class="filter" type="button" data-filter="video" aria-pressed="false">ویدئو</button>
-    </div>
     <div class="projects">
-      <
+      <article class="project" data-category="app">
+        <div class="project-media poster"><img src="assets/salonyar-showcase.webp" alt="پوستر اپلیکیشن مدیریت سالن زیبایی با نمونه سه صفحه اختصاصی" loading="lazy"></div>
+        <div class="project-info">
+          <div class="project-meta"><h3>نوبت‌یار</h3><span class="project-tag">اپلیکیشن اندروید</span></div>
+          <p>نمونه طراحی اپ مدیریت سالن زیبایی با قابلیت شخصی‌سازی نام، لوگو و ظاهر متناسب با هر سالن.</p>
+        </div>
+      </article>
+      <article class="project" data-category="app">
+        <div class="project-media"><img src="assets/taghvim-plus.webp" alt="آیکن و هویت بصری اپلیکیشن تقویم پلاس" loading="lazy"></div>
+        <div class="project-info">
+          <div class="project-meta"><h3>تقویم پلاس</h3><span class="project-tag">اپلیکیشن اندروید</span></div>
+          <p>تقویم فارسی با مناسبت‌ها، اوقات شرعی، اذان، هواشناسی و ابزارهای کاربردی؛ منتشرشده در کافه‌بازار.</p>
+          <a class="project-link" href="https://cafebazaar.ir/app/?id=ir.mobigraph.taghvim&ref=share" target="_blank" rel="noopener noreferrer">مشاهده و دانلود از بازار ←</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- ========== نوبت‌یار ========== -->
 <section class="product-feature" id="salonyar">
   <div class="wrap">
     <div class="feature-panel">
@@ -233,6 +307,39 @@ footer strong{color:var(--gold)}
   </div>
 </section>
 
+<!-- ========== تقویم پلاس ========== -->
+<section class="calendar-feature" id="taghvim-plus">
+  <div class="wrap">
+    <div class="feature-panel">
+      <div class="feature-copy">
+        <span class="eyebrow">محصول منتشرشده در کافه‌بازار</span>
+        <h3>تقویم پلاس؛ اوقات شرعی و اذان</h3>
+        <p>تقویم فارسی کامل و زیبا با تقویم شمسی، قمری و میلادی، اوقات شرعی، پخش اذان و پیش‌بینی هواشناسی؛ اکنون برای دانلود در کافه‌بازار منتشر شده است.</p>
+        <ul class="feature-list">
+          <li>تقویم شمسی، قمری و میلادی همراه مناسبت‌ها</li>
+          <li>اوقات شرعی به‌افق دزفول و تمام شهرهای ایران</li>
+          <li>پخش اذان با صدای مؤذن، حتی در حالت سایلنت و ویبره</li>
+          <li>هواشناسی ۷ روزه</li>
+          <li>ویجت صفحه اصلی با تنظیم رنگ و شفافیت</li>
+          <li>ارسال اوقات شرعی و مناسبت روز به کانال و گروه</li>
+          <li>قبله‌نما، تبدیل تاریخ و سخن روز</li>
+          <li>۱۰ تم زیبا، از جمله تم مخصوص دزفول</li>
+        </ul>
+        <a class="btn bazaar-btn" href="https://cafebazaar.ir/app/?id=ir.mobigraph.taghvim&ref=share" target="_blank" rel="noopener noreferrer">دانلود تقویم پلاس از کافه‌بازار ←</a>
+      </div>
+      <div class="feature-visuals">
+        <div class="calendar-video">
+          <div id="14185747966">
+            <script type="text/JavaScript" src="https://www.aparat.com/embed/rgg06qx?data[rnddiv]=14185747966&data[responsive]=yes"></script>
+          </div>
+        </div>
+        <div class="feature-image"><img src="assets/taghvim-plus.webp" alt="تصویر اپلیکیشن تقویم پلاس" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== خدمات ========== -->
 <section id="services">
   <div class="wrap">
     <div class="section-head">
@@ -249,6 +356,7 @@ footer strong{color:var(--gold)}
   </div>
 </section>
 
+<!-- ========== تعرفه‌ها ========== -->
 <section class="pricing-section" id="pricing">
   <div class="wrap">
     <div class="section-head">
@@ -278,12 +386,13 @@ footer strong{color:var(--gold)}
         <li>۸ تم رنگی</li>
         <li>کلید امنیتی</li>
       </ul>
-      <a class="btn pricing-cta" href="https://wa.me/989166549219?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B1%D8%B2%D8%B1%D9%88%20%D9%86%D9%88%D8%A8%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%D8%A7%20%D8%AA%D8%AE%D9%81%DB%8C%D9%81%207۰%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C%20%D9%BE%DB%8C%D8%A7%D9%85%20%D8%AF%D8%A7%D8%AF%D9%87%E2%80%8C%D8%A7%D9%85." target="_blank" rel="noopener noreferrer">رزرو تخفیف ۷۰٪ از طریق واتساپ</a>
+      <a class="btn pricing-cta" href="https://wa.me/989166549219?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B1%D8%B2%D8%B1%D9%88%20%D9%86%D9%88%D8%A8%D8%AA%E2%80%8C%DB%8C%D8%A7%D8%B1%20%D8%A8%D8%A7%20%D8%AA%D8%AE%D9%81%DB%8C%D9%81%20%DB%B7%DB%B0%20%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C%20%D9%BE%DB%8C%D8%A7%D9%85%20%D8%AF%D8%A7%D8%AF%D9%87%E2%80%8C%D8%A7%D9%85." target="_blank" rel="noopener noreferrer">رزرو تخفیف ۷۰٪ از طریق واتساپ</a>
       <p class="pricing-footnote">برای بررسی نیازها، ثبت سفارش و هماهنگی شخصی‌سازی، در واتساپ پیام بدهید.</p>
     </article>
   </div>
 </section>
 
+<!-- ========== ارتباط با ما ========== -->
 <section class="contact" id="contact">
   <div class="wrap contact-box">
     <span class="kicker">LET'S TALK</span>
@@ -297,34 +406,23 @@ footer strong{color:var(--gold)}
     <p class="contact-handle">شناسه تلگرام و ایتا: <strong dir="ltr">mobigraph_ir</strong></p>
   </div>
 </section>
+
 </main>
 
+<!-- ========== فوتر ========== -->
 <footer>
-  <div class="wrap footer-row"><span>© <strong>Mobigraph</strong> — طراحی اپلیکیشن و گرافیک اختصاصی</span><a href="#home">بازگشت به بالا ↑</a></div>
+  <div class="wrap footer-row">
+    <span>© <strong>Mobigraph</strong> — طراحی اپلیکیشن و گرافیک اختصاصی</span>
+    <a href="#home">بازگشت به بالا ↑</a>
+  </div>
 </footer>
 
+<!-- نوار تماس سریع (فقط موبایل) -->
 <div class="mobile-contact" aria-label="راه‌های ارتباط سریع">
   <a class="tg" href="https://t.me/mobigraph_ir" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="تلگرام" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#229ED9"/><path d="M5.1 11.5 18 6.6c.6-.2 1.1.2.9 1l-2.2 10.2c-.2.7-.7.9-1.3.5l-3.6-2.7-1.8 1.7c-.2.2-.4.3-.6.3l.3-3.8 6.9-6.2c.3-.3-.1-.4-.4-.2l-8.5 5.4-3.7-1.2c-.8-.2-.8-.8 1.1-1.5Z" fill="#fff"/></svg>تلگرام</a>
   <a class="wa" href="https://wa.me/989166549219" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="واتساپ" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#25D366"/><path fill="#fff" d="M6.1 18.3 7 15.2a7.1 7.1 0 1 1 2.2 2.1l-3.1 1Zm3.3-2.2.4.2a5.2 5.2 0 1 0-1.3-1.3l.2.4-.5 1.5 1.2-.8Zm5.1-2.8c-.2-.1-1-.5-1.2-.5s-.3-.1-.5.1-.5.5-.6.6-.2.1-.4 0a4.4 4.4 0 0 1-1.3-.8 4.9 4.9 0 0 1-.9-1.1c-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.3l-.5-1.2c-.1-.3-.3-.3-.5-.3h-.4c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.6s.7 1.8.8 1.9a7.5 7.5 0 0 0 2.9 2.6c.4.2.8.3 1 .4.4.1.8.1 1.1.1.3-.1 1-.4 1.1-.8.1-.4.1-.7.1-.8s-.1-.2-.3-.3Z"/></svg>واتساپ</a>
   <a class="ei" href="https://eitaa.com/mobigraph_ir" target="_blank" rel="noopener noreferrer"><svg class="social-icon" viewBox="0 0 24 24" role="img" aria-label="ایتا" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="12" fill="#F28C28"/><path d="M6 7.5A2.5 2.5 0 0 1 8.5 5h7A2.5 2.5 0 0 1 18 7.5v5a2.5 2.5 0 0 1-2.5 2.5H11l-3.5 3v-3.2A2.5 2.5 0 0 1 6 12.5Z" fill="#fff"/><circle cx="9" cy="10" r=".8" fill="#F28C28"/><circle cx="12" cy="10" r=".8" fill="#F28C28"/><circle cx="15" cy="10" r=".8" fill="#F28C28"/></svg>ایتا</a>
 </div>
 
-<script>
-(() => {
-  const buttons = document.querySelectorAll('.filter');
-  const cards = document.querySelectorAll('.project');
-  buttons.forEach(button => button.addEventListener('click', () => {
-    const selected = button.dataset.filter;
-    buttons.forEach(item => {
-      const active = item === button;
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-pressed', String(active));
-    });
-    cards.forEach(card => {
-      card.hidden = selected !== 'all' && card.dataset.category !== selected;
-    });
-  }));
-})();
-</script>
 </body>
-                                                                                                                           </html>
+</html>
