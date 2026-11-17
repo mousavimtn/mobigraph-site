@@ -125,6 +125,16 @@ h1 span{color:var(--gold)}
 .new-price{font-size:clamp(30px,7vw,42px);font-weight:900;color:#ff5362;line-height:1.5;margin-top:2px;text-shadow:0 0 24px rgba(255,83,98,.12)}
 .new-price small{font-size:14px;font-weight:700}
 .discount-note{display:block;font-size:12px;color:#ffb1b8}
+.partner-offer{margin:20px 0;padding:17px 18px;border:1px solid rgba(233,199,123,.38);border-radius:16px;background:linear-gradient(135deg,rgba(233,199,123,.10),rgba(233,199,123,.035))}
+.partner-offer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.partner-offer-title{font-size:15px;font-weight:800;color:var(--gold2)}
+.partner-offer-badge{font-size:11px;color:#192033;background:var(--gold);padding:4px 10px;border-radius:30px;font-weight:800;white-space:nowrap}
+.partner-offer p{font-size:12px;color:var(--muted);margin:9px 0}
+.partner-price{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.partner-price strong{font-size:27px;color:#8fe0ad;line-height:1.5}
+.partner-price span{font-size:12px;color:var(--muted)}
+.partner-cta{display:flex;width:100%;margin-top:12px;min-height:46px;background:#236b49;color:#fff;border-color:#2c8a5b;font-size:13px}
+.partner-cta:hover{background:#2b8158;border-color:#42a875}
 .pricing-features{list-style:none;padding:0;margin:20px 0 25px;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
 .pricing-features li{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:8px}
 .pricing-features li:before{content:"✓";color:var(--gold);font-weight:bold;flex:0 0 auto}
@@ -368,11 +378,20 @@ footer strong{color:var(--gold)}
         <span class="pricing-badge">۵۰٪ تخفیف ویژه روز آرایشگر</span>
       </div>
       <h3>اپلیکیشن نوبتیار سالن</h3>
-      <p class="pricing-subtitle">بدون اینترنت، بدون پنل پیامکی، بدون اشتراک ماهانه؛ مدیریت هوشمند نوبت‌ها و سالن زیبایی فقط با گوشی خودتان!</p>
+      <p class="pricing-subtitle">بدون اینترنت، بدون پنل پیامکی، بدون اشتراک ماهانه؛ مدیریت هوشمند نوبت‌ها و خدمات زیبایی فقط با گوشی خودتان!</p>
       <div class="price-block">
         <span class="old-price">۷,۹۰۰,۰۰۰ تومان</span>
         <div class="new-price">۳,۹۵۰,۰۰۰ <small>تومان</small></div>
         <span class="discount-note">۵۰٪ تخفیف به مناسبت روز آرایشگر؛ صرفه‌جویی ۳,۹۵۰,۰۰۰ تومان</span>
+      </div>
+      <div class="partner-offer">
+        <div class="partner-offer-head">
+          <span class="partner-offer-title">پیشنهاد ویژه سالن‌ها و فعالان مستقل زیبایی</span>
+          <span class="partner-offer-badge">۷۰٪ تخفیف همکاری</span>
+        </div>
+        <p>ویژه سالن‌های زیبایی، آرایشگران و میکاپ‌آرتیست‌های مستقل (حتی بدون سالن) که در تبلیغ و معرفی نوبتیار سالن همکاری کنند؛ پس از هماهنگی شرایط همکاری.</p>
+        <div class="partner-price"><strong>۲,۳۷۰,۰۰۰ تومان</strong><span>به‌جای ۷,۹۰۰,۰۰۰ تومان</span></div>
+        <a class="btn partner-cta" href="https://wa.me/989166549219?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%D9%86%20%D8%A8%D9%87%E2%80%8C%D8%B9%D9%86%D9%88%D8%A7%D9%86%20%D8%B5%D8%A7%D8%AD%D8%A8%20%D8%B3%D8%A7%D9%84%D9%86%20%D8%B2%DB%8C%D8%A8%D8%A7%DB%8C%DB%8C%20%2F%20%D8%A2%D8%B1%D8%A7%DB%8C%D8%B4%DA%AF%D8%B1%20%2F%20%D9%85%DB%8C%DA%A9%D8%A7%D9%BE%E2%80%8C%D8%A2%D8%B1%D8%AA%DB%8C%D8%B3%D8%AA%20%D9%85%D8%B3%D8%AA%D9%82%D9%84%D8%8C%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87%20%D8%A7%D8%B2%20%D8%AA%D8%AE%D9%81%DB%8C%D9%81%20%DB%B7%DB%B0%20%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C%20%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C%20%D8%AF%D8%B1%20%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%20%D9%88%20%D9%85%D8%B9%D8%B1%D9%81%DB%8C%20%D9%86%D9%88%D8%A8%D8%AA%DB%8C%D8%A7%D8%B1%20%D8%B3%D8%A7%D9%84%D9%86%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85.%20%D9%84%D8%B7%D9%81%D8%A7%D9%8B%20%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7%20%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C%20%D8%B1%D8%A7%20%D8%A7%D8%B9%D9%84%D8%A7%D9%85%20%DA%A9%D9%86%DB%8C%D8%AF." target="_blank" rel="noopener noreferrer">درخواست تخفیف ۷۰٪ همکاری از طریق واتساپ</a>
       </div>
       <ul class="pricing-features">
         <li>مدیریت مشتریان</li>
