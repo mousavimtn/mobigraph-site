@@ -102,14 +102,6 @@ h1 span{color:var(--gold)}
 .calendar-feature .feature-list{columns:2;column-gap:22px}
 .calendar-feature .feature-list li{break-inside:avoid}
 
-/* ========== خدمات ========== */
-.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.service{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:17px}
-.service-icon{display:grid;place-items:center;width:45px;height:45px;border-radius:13px;background:rgba(233,199,123,.1);color:var(--gold);font-size:23px}
-.service h3{font-size:17px;margin:12px 0 4px}
-.service p{font-size:13px;color:var(--muted);margin:0}
-.service-automation{grid-column:1/-1}
-
 /* ========== تعرفه‌ها ========== */
 .pricing-section{background:linear-gradient(180deg,rgba(255,255,255,.015),transparent 70%)}
 .pricing-card{position:relative;max-width:570px;margin:0 auto;padding:clamp(22px,5vw,36px);border:1px solid rgba(233,199,123,.38);border-radius:24px;background:linear-gradient(145deg,#202640,#151a2d);box-shadow:0 24px 70px rgba(0,0,0,.22);overflow:hidden}
@@ -194,10 +186,9 @@ footer strong{color:var(--gold)}
   .lead{font-size:14px}
   .hero-art{max-width:320px}
   .float-chip{font-size:11px;padding:9px 11px}
-  .projects,.services-grid{grid-template-columns:1fr}
+  .projects{grid-template-columns:1fr}
   .project-media{aspect-ratio:4/3}
   .project-media.poster{aspect-ratio:4/4.2}
-  .service-automation{grid-column:auto}
   .feature-panel{padding:20px}
   .pricing-card{padding:22px 18px}
   .pricing-card h3{font-size:22px}
@@ -223,7 +214,6 @@ footer strong{color:var(--gold)}
     <a class="brand" href="#home" aria-label="موبی‌گراف، صفحه اصلی"><img src="assets/mobigraph-logo.svg" alt="لوگوی موبی‌گراف"></a>
     <nav aria-label="ناوبری اصلی">
       <a href="#portfolio">نمونه‌کارها</a>
-      <a href="#services">خدمات</a>
       <a href="#salonyar">نوبتیار سالن</a>
       <a href="#taghvim-plus">تقویم پلاس</a>
       <a href="#pricing">تعرفه‌ها</a>
@@ -344,23 +334,6 @@ footer strong{color:var(--gold)}
         </div>
         <div class="feature-image"><img src="assets/taghvim-plus.webp" alt="تصویر اپلیکیشن تقویم پلاس" loading="lazy"></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== خدمات ========== -->
-<section id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">WHAT WE DO</span>
-      <h2 class="section-title">چه چیزی برای کسب‌وکارت نیاز داری؟</h2>
-      <p class="section-desc">از یک اپلیکیشن اختصاصی تا گرافیک و محتوای معرفی محصول، مسیر همکاری را با گفت‌وگو شروع می‌کنیم.</p>
-    </div>
-    <div class="services-grid">
-      <article class="service"><div class="service-icon">▣</div><h3>طراحی اپلیکیشن</h3><p>طراحی و شخصی‌سازی اپلیکیشن اندروید متناسب با نام، لوگو و نیاز کسب‌وکار.</p></article>
-      <article class="service"><div class="service-icon">✳</div><h3>رابط کاربری و هویت بصری</h3><p>طراحی ظاهر محصول، رنگ‌بندی و اجزای بصری هماهنگ با هویت برند.</p></article>
-      <article class="service"><div class="service-icon">▶</div><h3>گرافیک و معرفی محصول</h3><p>پوستر، تصاویر معرفی و محتوای تصویری برای نمایش بهتر محصول و خدمات.</p></article>
-      <article class="service service-automation"><div class="service-icon">⚙</div><h3>سیستم اختصاصی اتوماسیون موبی‌گراف</h3><p>اپلیکیشن‌ها با سیستم اختصاصی اتوماسیون موبی‌گراف در کمترین زمان، متناسب با نام، هویت بصری و نیازهای کسب‌وکار شما شخصی‌سازی می‌شوند.</p></article>
     </div>
   </div>
 </section>
